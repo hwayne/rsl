@@ -1,0 +1,52 @@
+INIT LETTERS
+
+****>++++++++++[-<++++++>]<[->+>+>+<<<] Setup
+>[-^^+^^+^]^^++++++++++>> F
+^^++++++> B
+^>[-^^+^^++^]^^-----[-<++>]<-----> i
+^^---> u
+^>+[-^^++>++<^^++>++<^] write the z's
+
+INIT CONDITIONS
+
+^>>>+<<< divisible by 3 condition
+^<< Move to F
+^>>>>>+<<<<< divisible by 5 condition
+^<< Move to B
+
+
+INIT FLAGS
+^, How many FizzBuzzes
+<<++++[>++++++++<-]>>  Print Number Flag
+
+BEGIN
+
+[->+ Which one we are 
+<< Enable Printnum Flag (ASCII space)
+
+PRINT FIZZ CHECK
+
+^>[ Triggers iff divisible by three
+<<< Start by resetting
+^[.>]<<<< Print Fizz
+^^^< disable number flag
+^] end
+
+PRINT BUZZ CHECK
+
+pretty much the same just buzz
+
+^^>[ Triggers iff divisible by five
+<<<<< Start by resetting
+^[.>]<<<< Print Buzz
+^< disable number flag
+^^^] end
+
+PRINT NUM CHECK
+
+^^[ Trigger iff not moved off
+>>! Lazy yes
+[<]] move to before flag
+>>[>]<<<. print space
+> land back on remaining to print
+]
